@@ -1,1 +1,41 @@
-<p>task1-a works!</p>
+<nz-card nzTitle="Card title">
+  <nz-row>
+    <nz-col nzSpan="24">
+      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="red" [nzTipFormatter]="toolTipTemplate"></nz-slider>
+    </nz-col>
+  </nz-row>
+
+  <nz-row>
+    <nz-col nzSpan="24">
+      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="green" [nzTipFormatter]="toolTipTemplate" ></nz-slider>
+    </nz-col>
+  </nz-row>
+
+  <nz-row>
+    <nz-col nzSpan="24">
+      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="blue" [nzTipFormatter]="toolTipTemplate"></nz-slider>
+    </nz-col>
+  </nz-row>
+
+  <nz-row>
+    <nz-col nzSpan="24">
+      <nz-slider [nzDefaultValue]="1" [nzMin]="0" [nzMax]="1" [nzStep]="0.01" [(ngModel)]="alpha" [nzTipFormatter]="toolTipTemplate"></nz-slider>
+    </nz-col>
+  </nz-row>
+
+  <ng-template #toolTipTemplate let-value let-colorName="colorName">
+    <span>{{ colorName }} chanel: {{ value }}</span>
+  </ng-template>
+
+  <nz-row>
+    <nz-col class="centered" nzSpan="24" [ngStyle]="{'display': 'flex', 'justify-content': 'center'}">
+      <div class="rectangle" [ngStyle]="{'background-color': color}"></div>
+    </nz-col>
+  </nz-row>
+
+  <nz-row>
+    <nz-col class="centered" nzSpan="24" [ngStyle]="{'display': 'flex', 'justify-content': 'center'}">
+      <button nz-button nzType="primary">Demo button</button>
+    </nz-col>
+  </nz-row>
+</nz-card>

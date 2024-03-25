@@ -30,17 +30,20 @@ import {NzListModule} from "ng-zorro-antd/list";
 import {NzDividerModule} from "ng-zorro-antd/divider";
 import {NzCardModule} from "ng-zorro-antd/card";
 import {NzModalModule} from "ng-zorro-antd/modal";
-
+import {NzFormModule} from "ng-zorro-antd/form";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NzSliderComponent} from "ng-zorro-antd/slider";
 
 const zorroModules = [
   NzButtonModule,
   NzCardModule,
   NzDividerModule,
   NzIconModule.forChild([BorderOutline, CheckSquareOutline]),
+  NzFormModule,
   NzLayoutModule,
   NzListModule,
   NzMenuModule,
-  NzModalModule
+  NzModalModule,
 ]
 
 @NgModule({
@@ -69,6 +72,8 @@ const zorroModules = [
     BrowserAnimationsModule,
     MarkdownModule.forRoot(),
     RouterModule,
+    NzSliderComponent,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
