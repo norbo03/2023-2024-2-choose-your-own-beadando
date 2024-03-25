@@ -1,30 +1,15 @@
 <nz-card nzTitle="Card title">
-  <nz-row>
-    <nz-col nzSpan="24">
-      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="red" [nzTipFormatter]="toolTipTemplate"></nz-slider>
-    </nz-col>
-  </nz-row>
-
-  <nz-row>
-    <nz-col nzSpan="24">
-      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="green" [nzTipFormatter]="toolTipTemplate" ></nz-slider>
-    </nz-col>
-  </nz-row>
-
-  <nz-row>
-    <nz-col nzSpan="24">
-      <nz-slider [nzMin]="1" [nzMax]="255" [(ngModel)]="blue" [nzTipFormatter]="toolTipTemplate"></nz-slider>
-    </nz-col>
-  </nz-row>
-
-  <nz-row>
-    <nz-col nzSpan="24">
-      <nz-slider [nzDefaultValue]="1" [nzMin]="0" [nzMax]="1" [nzStep]="0.01" [(ngModel)]="alpha" [nzTipFormatter]="toolTipTemplate"></nz-slider>
-    </nz-col>
-  </nz-row>
-
-  <ng-template #toolTipTemplate let-value let-colorName="colorName">
-    <span>{{ colorName }} chanel: {{ value }}</span>
+  <ng-template ngFor let-slider [ngForOf]="sliders | keyvalue">
+    <nz-row>
+      <nz-col nzSpan="24">
+        <nz-slider [nzMin]="slider.value.min"
+                   [nzMax]="slider.value.max"
+                   [(ngModel)]="slider.value.value"
+                   [nzStep]="slider.value.step"
+                   [nz-tooltip]="getTooltipText(slider.value.value, slider.key)"
+                   [nzTipFormatter]="null"></nz-slider>
+      </nz-col>
+    </nz-row>
   </ng-template>
 
   <nz-row>
