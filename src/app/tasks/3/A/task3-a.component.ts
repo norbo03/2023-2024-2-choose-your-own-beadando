@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./task3-a.component.less']
 })
 export class Task3AComponent {
-
+  cardNumber = '12123434-56567878';
+  phoneNumber = '06-20-123-4567';
+  password = 'AngularIsFun123!';
   constructor() { }
 
 }

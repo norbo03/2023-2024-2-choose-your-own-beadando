@@ -36,6 +36,7 @@ import {NzSliderComponent} from "ng-zorro-antd/slider";
 import {NzTooltipDirective} from "ng-zorro-antd/tooltip";
 import {EmployeeCardComponent} from "./employee-card/employee-card.component";
 import {NzSwitchComponent} from "ng-zorro-antd/switch";
+import {EncryptPipe} from "./_pipes/encrypt.pipe";
 
 const zorroModules = [
   NzButtonModule,
@@ -79,7 +80,8 @@ const zorroModules = [
     MarkdownModule.forRoot(),
     RouterModule,
     FormsModule,
-    NzSwitchComponent
+    NzSwitchComponent,
+    EncryptPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
