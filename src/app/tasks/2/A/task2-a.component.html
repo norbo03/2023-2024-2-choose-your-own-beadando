@@ -1,1 +1,22 @@
-<p>task2-a works!</p>
+<ng-container>
+  <nz-row>
+    <nz-col nzSpan="22">
+      <p>10-nél több hibával rendelkező dolgozók kiemelése</p>
+    </nz-col>
+    <nz-col nzSpan="2">
+      <nz-switch [(ngModel)]="highlightEmployees"></nz-switch>
+    </nz-col>
+  </nz-row>
+
+<ng-container *ngIf="employees.length > 0; else elseBlock">
+  <ng-container *ngFor="let employee of employees">
+    <app-employee-card [employee]="employee" [highlight]="highlightEmployees"
+                       (fixedError)="onFixedError($event)"
+    ></app-employee-card>
+  </ng-container>
+</ng-container>
+
+<ng-template #elseBlock>
+  <h2>No Employees Found</h2>
+</ng-template>
+</ng-container>

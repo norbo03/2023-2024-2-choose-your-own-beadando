@@ -1,0 +1,16 @@
+<nz-card style="width:300px;" [nzTitle]="employee.name" [ngStyle]="{'background-color': highlightEmployee() ? 'red' : 'inherit'}">
+  <nz-row>
+    <nz-col nzXs="24">
+      Role: {{employee.role.charAt(0) + employee.role.slice(1).toLowerCase()}}
+    </nz-col>
+  </nz-row>
+  <nz-row>
+    <nz-col nzXs="24">
+      Number of errors: {{employee.numberOfErrors}}
+    </nz-col>
+  </nz-row>
+  <nz-row *ngIf="highlightEmployee()">
+    <button nz-button nzType="primary" (click)="resolveError()">Hiba feloldása</button>
+  </nz-row>
+</nz-card>
+

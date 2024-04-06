@@ -34,6 +34,8 @@ import {NzFormModule} from "ng-zorro-antd/form";
 import {FormsModule} from "@angular/forms";
 import {NzSliderComponent} from "ng-zorro-antd/slider";
 import {NzTooltipDirective} from "ng-zorro-antd/tooltip";
+import {EmployeeCardComponent} from "./employee-card/employee-card.component";
+import {NzSwitchComponent} from "ng-zorro-antd/switch";
 
 const zorroModules = [
   NzButtonModule,
@@ -45,6 +47,8 @@ const zorroModules = [
   NzListModule,
   NzMenuModule,
   NzModalModule,
+  NzSliderComponent,
+  NzTooltipDirective
 ]
 
 @NgModule({
@@ -64,7 +68,8 @@ const zorroModules = [
     Task5BComponent,
     TaskSelectorComponent,
     SummaryComponent,
-    PreviewComponent
+    PreviewComponent,
+    EmployeeCardComponent
   ],
   imports: [
     ...zorroModules,
@@ -73,9 +78,8 @@ const zorroModules = [
     BrowserAnimationsModule,
     MarkdownModule.forRoot(),
     RouterModule,
-    NzSliderComponent,
     FormsModule,
-    NzTooltipDirective,
+    NzSwitchComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
