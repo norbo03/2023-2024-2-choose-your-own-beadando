@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Role} from "../../../_interfaces/Employee";
 
 @Component({
   selector: 'app-task4-a',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./task4-a.component.less']
 })
 export class Task4AComponent {
-
-  constructor() { }
-
+  selectedPermissions: Role[] = [];
+  constructor() {
+  }
+  protected readonly Role = Role;
 }

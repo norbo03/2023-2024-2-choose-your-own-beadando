@@ -1,1 +1,40 @@
-<p>task4-a works!</p>
+<nz-select
+  style="width: 100%"
+  [nzMaxTagCount]="2"
+  [nzMaxTagPlaceholder]="tagPlaceHolder"
+  nzMode="multiple"
+  nzPlaceHolder="Please select"
+  [(ngModel)]="selectedPermissions"
+>
+  <nz-option [nzValue]="Role.READER" nzLabel="Olvasási jog"></nz-option>
+  <nz-option [nzValue]="Role.WRITER" nzLabel="Írási jog"></nz-option>
+  <nz-option [nzValue]="Role.ADMIN" nzLabel="Adminisztrátori jog"></nz-option>
+</nz-select>
+<ng-template #tagPlaceHolder let-selectedList>
+  and {{ selectedList.length }} more selected
+</ng-template>
+
+<ng-container>
+  <nz-row>
+    <nz-col nzSpan="24">
+      <div [appPermission]="Role.READER" [selectedPermissions]="selectedPermissions">
+        Demo usage for permissions (Read)
+      </div>
+    </nz-col>
+  </nz-row>
+  <nz-row>
+    <nz-col nzSpan="24">
+      <div [appPermission]="Role.WRITER" [selectedPermissions]="selectedPermissions">
+        Demo usage for permissions (Write)
+      </div>
+    </nz-col>
+  </nz-row>
+  <nz-row>
+    <nz-col nzSpan="24">
+      <div [appPermission]="Role.ADMIN" [selectedPermissions]="selectedPermissions">
+        Demo usage for permissions (Admin)
+      </div>
+    </nz-col>
+  </nz-row>
+
+</ng-container>

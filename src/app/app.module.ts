@@ -37,6 +37,8 @@ import {NzTooltipDirective} from "ng-zorro-antd/tooltip";
 import {EmployeeCardComponent} from "./employee-card/employee-card.component";
 import {NzSwitchComponent} from "ng-zorro-antd/switch";
 import {EncryptPipe} from "./_pipes/encrypt.pipe";
+import {NzOptionComponent, NzSelectComponent} from "ng-zorro-antd/select";
+import {PermissionDirective} from "./_directives/permission.directive";
 
 const zorroModules = [
   NzButtonModule,
@@ -70,7 +72,8 @@ const zorroModules = [
     TaskSelectorComponent,
     SummaryComponent,
     PreviewComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
+    PermissionDirective
   ],
   imports: [
     ...zorroModules,
@@ -81,7 +84,9 @@ const zorroModules = [
     RouterModule,
     FormsModule,
     NzSwitchComponent,
-    EncryptPipe
+    EncryptPipe,
+    NzSelectComponent,
+    NzOptionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
