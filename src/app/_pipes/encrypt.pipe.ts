@@ -10,9 +10,9 @@ export class EncryptPipe implements PipeTransform {
 
   transform(input: string): string {
     if (this.cardNumberRegex.test(input)) {
-      return "*" + input.substring(16);
+      return "*" + input.substring(input.length - 4);
     } else if (this.phoneNumberRegex.test(input)) {
-      return "**-**-***-**" + input.substring(12);
+      return "**-**-***-**" + input.substring(input.length - 2);
     } else {
       return input.split('').map(() => '*').join('');
     }
