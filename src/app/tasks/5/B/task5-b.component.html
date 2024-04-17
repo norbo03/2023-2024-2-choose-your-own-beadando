@@ -1,1 +1,30 @@
-<p>task5-b works!</p>
+<nz-table
+  #virtualTable
+  [nzData]="cars"
+  [nzFrontPagination]="false"
+  [nzShowPagination]="false"
+  [nzScroll]="{ y: '500px' }"
+  [nzBordered]="true"
+  [nzVirtualItemSize]="10"
+  [nzVirtualForTrackBy]="trackByIndex"
+>
+  <thead>
+    <tr>
+<!--      <th nzLeft>#</th>-->
+      <th nzLeft>Gyártó</th>
+      <th nzLeft>Gyártási év</th>
+    </tr>
+  </thead>
+  <tbody>
+  <ng-template nz-virtual-scroll let-data let-index="index">
+    <tr>
+<!--      <td nzLeft>{{ index + 1 }}</td>-->
+      <td nzLeft>{{ data.car.brand }}</td>
+      <td nzLeft
+          nz-tooltip
+          [nzTooltipTitle]="'Plate: ' + data.car.plate"
+      >{{ data.car.manufacturingDate }}</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</nz-table>

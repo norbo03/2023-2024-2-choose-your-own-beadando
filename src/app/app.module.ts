@@ -39,6 +39,7 @@ import {NzSwitchComponent} from "ng-zorro-antd/switch";
 import {EncryptPipe} from "./_pipes/encrypt.pipe";
 import {NzOptionComponent, NzSelectComponent} from "ng-zorro-antd/select";
 import {PermissionDirective} from "./_directives/permission.directive";
+import {NzTableModule, NzTableVirtualScrollDirective} from "ng-zorro-antd/table";
 
 const zorroModules = [
   NzButtonModule,
@@ -86,7 +87,9 @@ const zorroModules = [
     NzSwitchComponent,
     EncryptPipe,
     NzSelectComponent,
-    NzOptionComponent
+    NzOptionComponent,
+    NzTableVirtualScrollDirective,
+    NzTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
